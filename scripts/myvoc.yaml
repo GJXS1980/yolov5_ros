@@ -1,0 +1,8 @@
+train: /home/qiu/ws/yolov5/VOCdata/dataSet_path/train.txt #记录训练集所有图片的路径
+val: /home/qiu/ws/yolov5/VOCdata/dataSet_path/train.txt
+
+# number of classes 类别数量
+nc: 4
+
+# class names
+names: ["Green_apples", "Red_apples","Orange", "mango"] #类别名称

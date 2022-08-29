@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<launch>
+
+    <node pkg="yolov5_ros" name="yolov5_ros" type="detect_ros.py" output="screen">
+	<param name="source" value="$(find yolov5_ros)/scripts/2.jpg"/>
+	<param name="weights" value="$(find yolov5_ros)/weights/best.pt"/>
+	<param name="data" value="$(find yolov5_ros)/data/coco128.yaml"/>
+	<param name="project" value="$(find yolov5_ros)/runs/detect"/>
+
+	<param name="imgsz" value="(640,640)" />
+	<param name="conf_thres" value="0.9"/>
+	<param name="iou_thres" value="0.45"/>
+	<param name="max_det" value="1000"/>
+
+    </node>
+
+</launch>
