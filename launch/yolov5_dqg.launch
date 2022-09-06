@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Load Parameter -->
+  <param name="yolov5_path"       value="$(find yolov5_ros)/scripts"/>
+  <param name="use_cpu"           value="true" />
+
+  <!-- Start yolov5 and ros wrapper -->
+  <node pkg="yolov5_ros" type="detect_dqg.py" name="detect_dqg" output="screen" >
+    <!--weight_path '' 训练好的模型路径，可更换不同的模型识别-->
+    <param name="weight_path"       value="$(find yolov5_ros)/weights/dqg/best.pt"/>
+    <!--image_topic 订阅的摄像头话题-->
+    <param name="image_topic"       value="/usb_cam/image_raw" />
+    <!--pub_topic 获取标签、置信度、坐标的话题-->
+    <param name="pub_topic"         value="/yolov5/BoundingBoxes" />
+    <param name="camera_frame"       value="usb_cam_frame"/>
+    <!--conf 置信度，可调节大小来提高识别的准确率-->
+    <param name="conf"              value="0.5" />
+  </node>
+
+</launch>

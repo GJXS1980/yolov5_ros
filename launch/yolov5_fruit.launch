@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<launch>
+
+    <node pkg="yolov5_ros" name="yolov5_ros" type="detect_fruit.py" output="screen">
+		<!--source 0 本机摄像头，2、4...外接摄像头-->
+		<param name="source" value="2"/> 
+		<!--weight '' 训练好的模型，可更换不同的模型识别-->
+		<param name="weights" value="$(find yolov5_ros)/weights/fruit/best.pt"/>
+		<param name="data" value="$(find yolov5_ros)/data/coco128.yaml"/>
+		<param name="project" value="$(find yolov5_ros)/runs/detect"/>
+
+		<param name="imgsz" value="(640,640)" />
+		<!--conf_thres 置信度，可调节大小来提高识别的准确率-->
+		<param name="conf_thres" value="0.9"/>
+		<param name="iou_thres" value="0.45"/>
+		<param name="max_det" value="1000"/>
+
+    </node>
+
+</launch>
