@@ -63,8 +63,6 @@ labelImg下载地址：
         git clone https://github.com/heartexlabs/labelImg.git
 ```
 
-<p align="left"><img width="600" src=""></p>
-
 3. __划分训练集、测试集：__  进入<code>yolov5_ros/scripts/dataset/dataSet_path/</code> 目录下打开终端，执行以下命令，得到 <code>train.txt</code> 、<code>val.txt</code>
 ```bash
         python nake_train_val.py '/home/qiu/robot_ws/src/yolov5_ros/scripts/dataSet/labels' '/home/qiu/robot_ws/src/yolov5_ros/scripts/dataSet/images'     
